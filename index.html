@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radar da Transparência Pública 2026 em Pernambuco | Jamildo.com</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --jamildo-orange: #f83d03;
+      --jamildo-orange-soft: #fff1ec;
+      --jamildo-navy: #024796;
+      --jamildo-navy-dark: #012d61;
+      --jamildo-navy-soft: #eef4fb;
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border-color: #e2e8f0;
+      --diamante: #0284c7;
+      --diamante-bg: #e0f2fe;
+      --ouro: #d97706;
+      --ouro-bg: #fef3c7;
+      --prata: #475569;
+      --prata-bg: #f1f5f9;
+      --elevado: #7c3aed;
+      --elevado-bg: #f3e8ff;
+      --intermediario: #ea580c;
+      --intermediario-bg: #ffedd5;
+      --basico: #dc2626;
+      --basico-bg: #fee2e2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 728px;
+      max-height: 728px;
+      overflow: hidden;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .app-shell {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 728px;
+      max-height: 728px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-main);
+      overflow: hidden;
+    }
+
+    /* TOP HEADER */
+    .top-header {
+      background: linear-gradient(135deg, var(--jamildo-navy-dark) 0%, var(--jamildo-navy) 100%);
+      color: #ffffff;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 3px solid var(--jamildo-orange);
+      flex-shrink: 0;
+    }
+
+    .brand-title-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .logo-link {
+      display: inline-flex;
+      align-items: center;
+      background: #ffffff;
+      padding: 5px 10px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      transition: transform 0.15s ease;
+    }
+
+    .logo-link:hover {
+      transform: scale(1.03);
+    }
+
+    .logo-link img {
+      height: 26px;
+      width: auto;
+      display: block;
+    }
+
+    .title-block {
+      min-width: 0;
+    }
+
+    .title-block h1 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .title-block p {
+      font-size: 0.76rem;
+      color: #cbd5e1;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .header-kpis {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .kpi-pill {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 8px;
+      padding: 5px 10px;
+      text-align: right;
+    }
+
+    .kpi-pill .lbl {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #cbd5e1;
+      display: block;
+    }
+
+    .kpi-pill .val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .kpi-pill.highlight {
+      background: var(--jamildo-orange);
+      border-color: var(--jamildo-orange);
+    }
+
+    /* TABS NAVIGATION */
+    .tabs-bar {
+      display: flex;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      padding: 0 14px;
+      gap: 4px;
+      overflow-x: auto;
+      flex-shrink: 0;
+      scrollbar-width: none;
+    }
+
+    .tabs-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      appearance: none;
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 11px 14px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tab-btn:hover {
+      color: var(--jamildo-navy);
+      background: var(--jamildo-navy-soft);
+    }
+
+    .tab-btn.active {
+      color: var(--jamildo-orange);
+      border-bottom-color: var(--jamildo-orange);
+      background: var(--jamildo-orange-soft);
+    }
+
+    .tab-badge {
+      font-size: 0.68rem;
+      padding: 2px 6px;
+      border-radius: 99px;
+      background: var(--jamildo-navy);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .tab-btn.active .tab-badge {
+      background: var(--jamildo-orange);
+    }
+
+    /* MAIN CONTENT AREA */
+    .tab-content {
+      display: none;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .tab-content.active {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* TAB 1: RANKING & CITY EXPLORER */
+    .explorer-layout {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 12px;
+      padding: 12px 14px;
+      height: 100%;
+      min-height: 0;
+    }
+
+    .ranking-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .controls-bar {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: #ffffff;
+      flex-shrink: 0;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .search-input-wrap {
+      position: relative;
+      flex: 1;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 8px 12px 8px 32px;
+      border: 1px solid #cbd5e1;
+      border-radius: 7px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .search-input:focus {
+      border-color: var(--jamildo-navy);
+      box-shadow: 0 0 0 2px rgba(2, 71, 150, 0.12);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      pointer-events: none;
+    }
+
+    .sort-select {
+      padding: 7px 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 7px;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-main);
+      background: #f8fafc;
+      cursor: pointer;
+    }
+
+    .filter-chips {
+      display: flex;
+      gap: 5px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      scrollbar-width: none;
+    }
+
+    .filter-chips::-webkit-scrollbar {
+      display: none;
+    }
+
+    .chip {
+      appearance: none;
+      border: 1px solid var(--border-color);
+      background: #f8fafc;
+      color: var(--text-muted);
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.72rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+
+    .chip:hover {
+      border-color: var(--jamildo-navy);
+      color: var(--jamildo-navy);
+    }
+
+    .chip.active {
+      background: var(--jamildo-navy);
+      color: #ffffff;
+      border-color: var(--jamildo-navy);
+    }
+
+    .table-header {
+      display: grid;
+      grid-template-columns: 48px 1fr 78px 96px 76px;
+      padding: 7px 12px;
+      background: #f1f5f9;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.69rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.03em;
+      flex-shrink: 0;
+    }
+
+    .table-body {
+      overflow-y: auto;
+      flex: 1;
+      divide-y: 1px solid var(--border-color);
+    }
+
+    .city-row {
+      display: grid;
+      grid-template-columns: 48px 1fr 78px 96px 76px;
+      align-items: center;
+      padding: 8px 12px;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: background 0.12s;
+    }
+
+    .city-row:hover {
+      background: var(--jamildo-navy-soft);
+    }
+
+    .city-row.selected {
+      background: var(--jamildo-orange-soft);
+      border-left: 4px solid var(--jamildo-orange);
+      padding-left: 8px;
+    }
+
+    .pos-cell {
+      font-weight: 800;
+      color: var(--jamildo-navy);
+      font-size: 0.78rem;
+    }
+
+    .name-cell {
+      font-weight: 600;
+      color: var(--text-main);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 8px;
+    }
+
+    .score-cell {
+      font-weight: 800;
+      color: var(--text-main);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .ess-cell {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .ess-cell.warn {
+      color: #dc2626;
+      font-weight: 700;
+    }
+
+    .badge-selo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2px 7px;
+      border-radius: 99px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      width: fit-content;
+    }
+
+    .selo-Diamante { background: var(--diamante-bg); color: var(--diamante); }
+    .selo-Ouro { background: var(--ouro-bg); color: var(--ouro); }
+    .selo-Prata { background: var(--prata-bg); color: var(--prata); }
+    .selo-Elevado { background: var(--elevado-bg); color: var(--elevado); }
+    .selo-Intermediário { background: var(--intermediario-bg); color: var(--intermediario); }
+    .selo-Básico, .selo-Inicial { background: var(--basico-bg); color: var(--basico); }
+
+    /* RIGHT PANEL: CITY DETAIL */
+    .city-detail-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 14px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .detail-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
+    }
+
+    .detail-city-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--jamildo-navy);
+      line-height: 1.2;
+    }
+
+    .detail-rank-sub {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .big-score-box {
+      background: var(--jamildo-navy);
+      color: #ffffff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .big-score-box .num {
+      font-size: 1.2rem;
+      font-weight: 800;
+      display: block;
+      line-height: 1.1;
+    }
+
+    .big-score-box .lbl {
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      opacity: 0.85;
+    }
+
+    .alert-box {
+      padding: 9px 11px;
+      border-radius: 8px;
+      font-size: 0.76rem;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    .alert-box.warn {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #9a3412;
+    }
+
+    .alert-box.ok {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #166534;
+    }
+
+    .organs-section-title {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .organ-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .organ-card {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 9px 10px;
+      background: #f8fafc;
+    }
+
+    .organ-card .org-type {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .organ-card .org-score {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--jamildo-navy);
+      margin: 3px 0;
+    }
+
+    .organ-card .org-meta {
+      font-size: 0.71rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .comp-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .comp-bar-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .comp-bar-head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.73rem;
+      font-weight: 600;
+    }
+
+    .bar-track {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 99px;
+      transition: width 0.35s ease;
+    }
+
+    /* TAB 2, 3, 4 SCROLLABLE PANELS */
+    .scroll-tab-body {
+      padding: 14px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      height: 100%;
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 14px;
+    }
+
+    .card-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .card-panel h2 {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--jamildo-navy);
+      margin-bottom: 4px;
+    }
+
+    .card-panel p.sub {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    /* EVOLUTION CHART */
+    .chart-svg-wrap {
+      width: 100%;
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .milestone-list {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .milestone-item {
+      border-left: 3px solid var(--jamildo-orange);
+      background: #f8fafc;
+      padding: 8px 11px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .milestone-item strong {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--jamildo-navy);
+      margin-bottom: 2px;
+    }
+
+    .milestone-item span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      display: block;
+    }
+
+    /* SEALS DISTRIBUTION */
+    .seals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+      gap: 8px;
+    }
+
+    .seal-stat-card {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      background: #f8fafc;
+    }
+
+    .seal-stat-card .count {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--jamildo-navy);
+      display: block;
+      margin: 4px 0 2px;
+    }
+
+    .seal-stat-card .pct {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .camaras-100-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .camara-tag {
+      background: var(--jamildo-navy-soft);
+      color: var(--jamildo-navy);
+      border: 1px solid #bfdbfe;
+      padding: 4px 9px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .camara-tag:hover {
+      background: var(--jamildo-orange);
+      color: #ffffff;
+      border-color: var(--jamildo-orange);
+    }
+
+    /* FOOTER */
+    .app-footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+      padding: 7px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .app-footer a {
+      color: var(--jamildo-orange);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .header-kpis {
+        display: none;
+      }
+      .explorer-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.15fr 1fr;
+        gap: 8px;
+        padding: 8px;
+      }
+      .grid-2col {
+        grid-template-columns: 1fr;
+      }
+      .table-header, .city-row {
+        grid-template-columns: 38px 1fr 66px 84px;
+      }
+      .ess-col-head, .ess-cell {
+        display: none;
+      }
+      .organ-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <!-- HEADER -->
+    <header class="top-header">
+      <div class="brand-title-group">
+        <a href="https://jamildo.com" target="_blank" rel="noopener noreferrer" class="logo-link" title="Ir para Jamildo.com">
+          <img src="https://jamildo.com/media/uploads/logojamildo.png" alt="Jamildo.com" />
+        </a>
+        <div class="title-block">
+          <h1>Radar da Transparência Pública 2026 em Pernambuco</h1>
+          <p>Levantamento Atricon e TCE-PE avaliou 374 entidades estaduais e municipais</p>
+        </div>
+      </div>
+      <div class="header-kpis">
+        <div class="kpi-pill highlight">
+          <span class="lbl">Média PE (2º no País)</span>
+          <span class="val">86,00%</span>
+        </div>
+        <div class="kpi-pill">
+          <span class="lbl">Média Brasil</span>
+          <span class="val">69,65%</span>
+        </div>
+        <div class="kpi-pill">
+          <span class="lbl">Com Selo em PE</span>
+          <span class="val">65,51%</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVIGATION TABS -->
+    <nav class="tabs-bar" role="tablist">
+      <button class="tab-btn active" onclick="switchTab('tab-ranking', this)">
+        1. Ranking e Busca por Cidade <span class="tab-badge">184</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab-evolucao', this)">
+        2. Evolução Anual (2022 a 2026)
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab-poderes', this)">
+        3. Poderes e Selos (374 Órgãos)
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab-gargalos', this)">
+        4. Gargalos e Caso Alepe
+      </button>
+    </nav>
+
+    <!-- TAB 1: RANKING E BUSCA POR CIDADE -->
+    <section id="tab-ranking" class="tab-content active">
+      <div class="explorer-layout">
+        <!-- LEFT: SEARCHABLE LIST -->
+        <div class="ranking-panel">
+          <div class="controls-bar">
+            <div class="search-row">
+              <div class="search-input-wrap">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="citySearch" class="search-input" placeholder="Buscar município (ex: Recife, Caruaru, Carnaubeira...)" oninput="renderRanking()" />
+              </div>
+              <select id="sortSelect" class="sort-select" onchange="renderRanking()">
+                <option value="pos-asc">Melhor posição</option>
+                <option value="pos-desc">Pior posição</option>
+                <option value="name-asc">Ordem A-Z</option>
+                <option value="ess-asc">Menor Critério Essencial</option>
+              </select>
+            </div>
+            <div class="filter-chips" id="seloFilters">
+              <button class="chip active" data-selo="TODOS" onclick="setSeloFilter('TODOS', this)">Todos (184)</button>
+              <button class="chip" data-selo="Diamante" onclick="setSeloFilter('Diamante', this)">💎 Diamante (33)</button>
+              <button class="chip" data-selo="Ouro" onclick="setSeloFilter('Ouro', this)">🥇 Ouro (41)</button>
+              <button class="chip" data-selo="Prata" onclick="setSeloFilter('Prata', this)">🥈 Prata (24)</button>
+              <button class="chip" data-selo="Elevado" onclick="setSeloFilter('Elevado', this)">⚠️ Elevado s/ Selo (37)</button>
+              <button class="chip" data-selo="Intermediário" onclick="setSeloFilter('Intermediário', this)">Intermediário (40)</button>
+              <button class="chip" data-selo="Básico" onclick="setSeloFilter('Básico', this)">Básico (9)</button>
+            </div>
+          </div>
+
+          <div class="table-header">
+            <span>Pos.</span>
+            <span>Município</span>
+            <span>Nota 2026</span>
+            <span>Classificação</span>
+            <span class="ess-col-head" style="text-align:right;">Essenciais</span>
+          </div>
+
+          <div class="table-body" id="rankingList"></div>
+        </div>
+
+        <!-- RIGHT: SELECTED CITY INSPECTOR -->
+        <div class="city-detail-panel" id="cityDetailPanel"></div>
+      </div>
+    </section>
+
+    <!-- TAB 2: EVOLUÇÃO HISTÓRICA -->
+    <section id="tab-evolucao" class="tab-content">
+      <div class="scroll-tab-body">
+        <div class="grid-2col">
+          <div class="card-panel">
+            <h2>Crescimento da Média de Transparência em Pernambuco (2022 a 2026)</h2>
+            <p class="sub">Índice médio das entidades avaliadas no estado em cada ciclo do PNTP, comparado à média nacional de 2026 (69,65%).</p>
+            <div class="chart-svg-wrap">
+              <svg viewBox="0 0 560 250" width="100%" height="auto" role="img" aria-label="Gráfico de evolução da transparência em Pernambuco de 2022 a 2026">
+                <!-- Grid lines -->
+                <line x1="45" y1="30" x2="530" y2="30" stroke="#e2e8f0" stroke-dasharray="3,3" />
+                <line x1="45" y1="80" x2="530" y2="80" stroke="#e2e8f0" stroke-dasharray="3,3" />
+                <line x1="45" y1="130" x2="530" y2="130" stroke="#e2e8f0" stroke-dasharray="3,3" />
+                <line x1="45" y1="180" x2="530" y2="180" stroke="#e2e8f0" stroke-dasharray="3,3" />
+                <line x1="45" y1="215" x2="530" y2="215" stroke="#cbd5e1" stroke-width="1.5" />
+
+                <!-- Y Axis labels -->
+                <text x="38" y="34" text-anchor="end" font-size="10" fill="#64748b" font-weight="600">100%</text>
+                <text x="38" y="84" text-anchor="end" font-size="10" fill="#64748b" font-weight="600">80%</text>
+                <text x="38" y="134" text-anchor="end" font-size="10" fill="#64748b" font-weight="600">60%</text>
+                <text x="38" y="184" text-anchor="end" font-size="10" fill="#64748b" font-weight="600">40%</text>
+
+                <!-- National 2026 Reference Line (69.65% -> y = 215 - (69.65 * 1.85) = 86.1) -->
+                <line x1="45" y1="106" x2="530" y2="106" stroke="#024796" stroke-width="1.5" stroke-dasharray="5,4" />
+                <rect x="355" y="94" width="170" height="18" rx="4" fill="#eef4fb" />
+                <text x="440" y="106" text-anchor="middle" font-size="9.5" fill="#024796" font-weight="700">Média Brasil 2026: 69,65%</text>
+
+                <!-- Area under curve -->
+                <polygon points="80,215 80,112.6 185,138.6 290,107.8 395,64.8 500,54.3 500,215" fill="rgba(248, 61, 3, 0.12)" />
+
+                <!-- Line connecting points:
+                     Scale: 40% = 180px, 100% = 30px (2.5px per 1%)
+                     2022: 66.97% -> y = 180 - (26.97 * 2.5) = 112.6
+                     2023: 56.35% -> y = 180 - (16.35 * 2.5) = 139.1
+                     2024: 68.92% -> y = 180 - (28.92 * 2.5) = 107.7
+                     2025: 81.72% -> y = 180 - (41.72 * 2.5) = 75.7
+                     2026: 86.00% -> y = 180 - (46.00 * 2.5) = 65.0
+                -->
+                <polyline fill="none" stroke="#f83d03" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"
+                  points="80,112.6 185,139.1 290,107.7 395,75.7 500,65.0" />
+
+                <!-- Data Points and Labels -->
+                <!-- 2022 -->
+                <circle cx="80" cy="112.6" r="5.5" fill="#ffffff" stroke="#024796" stroke-width="3" />
+                <text x="80" y="99" text-anchor="middle" font-size="11" font-weight="800" fill="#0f172a">66,97%</text>
+                <text x="80" y="234" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">2022</text>
+
+                <!-- 2023 -->
+                <circle cx="185" cy="139.1" r="5.5" fill="#ffffff" stroke="#024796" stroke-width="3" />
+                <text x="185" y="158" text-anchor="middle" font-size="11" font-weight="800" fill="#475569">56,35%</text>
+                <text x="185" y="234" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">2023</text>
+
+                <!-- 2024 -->
+                <circle cx="290" cy="107.7" r="5.5" fill="#ffffff" stroke="#024796" stroke-width="3" />
+                <text x="290" y="94" text-anchor="middle" font-size="11" font-weight="800" fill="#0f172a">68,92%</text>
+                <text x="290" y="234" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">2024</text>
+
+                <!-- 2025 -->
+                <circle cx="395" cy="75.7" r="5.5" fill="#ffffff" stroke="#f83d03" stroke-width="3" />
+                <text x="395" y="62" text-anchor="middle" font-size="11" font-weight="800" fill="#024796">81,72%</text>
+                <text x="395" y="234" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">2025</text>
+
+                <!-- 2026 -->
+                <circle cx="500" cy="65.0" r="7" fill="#f83d03" stroke="#ffffff" stroke-width="2.5" />
+                <rect x="466" y="34" width="68" height="22" rx="5" fill="#f83d03" />
+                <text x="500" y="49" text-anchor="middle" font-size="11.5" font-weight="800" fill="#ffffff">86,00%</text>
+                <text x="500" y="234" text-anchor="middle" font-size="11.5" font-weight="800" fill="#f83d03">2026</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <h2>Destaques da Comparação Multi-Anos</h2>
+            <p class="sub">Principais saltos de desempenho registrados no estado entre 2022 e 2026.</p>
+            <div class="milestone-list">
+              <div class="milestone-item">
+                <strong>Salto de 17,08 pontos em dois anos</strong>
+                <span>A média geral de Pernambuco subiu de 68,92% em 2024 para 81,72% em 2025 e atingiu 86,00% em 2026, ficando atrás apenas de Sergipe (87,48%).</span>
+              </div>
+              <div class="milestone-item">
+                <strong>Câmara de Carnaubeira da Penha: de 23,28% a 100%</strong>
+                <span>O Legislativo municipal saiu de 23,28% em 2024 para 100,00% em 2026. Somado aos 100% da Prefeitura, o município tornou-se o único a gabaritar nos dois poderes.</span>
+              </div>
+              <div class="milestone-item">
+                <strong>Recife conquista selo Diamante inédito</strong>
+                <span>A capital atingiu 96,15% e 100% dos itens essenciais, alcançando o 6º lugar entre as capitais do país e unindo-se a Aracaju na faixa Diamante no Nordeste.</span>
+              </div>
+              <div class="milestone-item">
+                <strong>Governo de Pernambuco mantém selo Diamante</strong>
+                <span>O Poder Executivo estadual passou de 95,69% no ciclo de 2025 para 95,71% em 2026, renovando a certificação máxima.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: PODERES E SELOS -->
+    <section id="tab-poderes" class="tab-content">
+      <div class="scroll-tab-body">
+        <div class="grid-2col">
+          <div class="card-panel">
+            <h2>Desempenho por Poder e Órgão em Pernambuco (2026)</h2>
+            <p class="sub">Comparativo entre os órgãos estaduais, médias das prefeituras e câmaras municipais.</p>
+            <div class="comp-bars" id="powersBars"></div>
+          </div>
+
+          <div class="card-panel">
+            <h2>Distribuição das 374 Entidades Avaliadas</h2>
+            <p class="sub">Quase dois terços dos órgãos pernambucanos (65,51%, ou 245 entidades) conquistaram selo de qualidade, contra 26,49% da média nacional.</p>
+            <div class="seals-grid">
+              <div class="seal-stat-card">
+                <span class="badge-selo selo-Diamante">💎 Diamante</span>
+                <span class="count">107</span>
+                <span class="pct">28,61% do total</span>
+              </div>
+              <div class="seal-stat-card">
+                <span class="badge-selo selo-Ouro">🥇 Ouro</span>
+                <span class="count">103</span>
+                <span class="pct">27,54% do total</span>
+              </div>
+              <div class="seal-stat-card">
+                <span class="badge-selo selo-Prata">🥈 Prata</span>
+                <span class="count">35</span>
+                <span class="pct">9,36% do total</span>
+              </div>
+              <div class="seal-stat-card">
+                <span class="badge-selo selo-Elevado">Elevado (s/ selo)</span>
+                <span class="count">69</span>
+                <span class="pct">18,45% do total</span>
+              </div>
+              <div class="seal-stat-card">
+                <span class="badge-selo selo-Intermediário">Intermediário</span>
+                <span class="count">50</span>
+                <span class="pct">13,37% do total</span>
+              </div>
+              <div class="seal-stat-card">
+                <span class="badge-selo selo-Básico">Básico / Inicial</span>
+                <span class="count">10</span>
+                <span class="pct">9 Básico + 1 Inicial</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 14px; border-top: 1px solid var(--border-color); padding-top: 10px;">
+              <div class="organs-section-title">13 Câmaras de Vereadores que atingiram nota 100% (clique para ver a cidade)</div>
+              <div class="camaras-100-tags" id="camaras100List"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: GARGALOS E CASO ALEPE -->
+    <section id="tab-gargalos" class="tab-content">
+      <div class="scroll-tab-body">
+        <div class="grid-2col">
+          <div class="card-panel">
+            <h2>Maiores Gargalos de Transparência no Estado</h2>
+            <p class="sub">Áreas temáticas da matriz de 181 critérios técnicos que ficaram abaixo da média estadual de 86,00%.</p>
+            <div class="comp-bars" id="bottlenecksBars"></div>
+          </div>
+
+          <div class="card-panel">
+            <h2>Raio-X da Alepe: Único Órgão Estadual Abaixo da Média</h2>
+            <p class="sub">Com 75,94% (Selo Prata), a Assembleia Legislativa ficou 10,06 pontos abaixo da média estadual (86,00%) e atrás da média das Câmaras Municipais (90,76%).</p>
+            <div class="milestone-list">
+              <div class="milestone-item">
+                <strong>Nota 0,00% em Diárias de Viagem</strong>
+                <span>O portal da Alepe zerou a dimensão que exige a publicação de valores pagos em diárias, favorecidos, justificativas, destinos e relatórios de viagem.</span>
+              </div>
+              <div class="milestone-item">
+                <strong>Apenas 48,30% em Recursos Humanos</strong>
+                <span>Baixa presença de dados detalhados sobre folha de pagamento, estrutura de cargos, servidores comissionados, efetivos, estagiários e remuneração líquida individualizada.</span>
+              </div>
+              <div class="milestone-item">
+                <strong>Cerca de 50% em Contratos e Licitações</strong>
+                <span>Atendimento parcial às exigências da Nova Lei de Licitações (Lei nº 14.133/2021), com falhas na publicação integral de editais, aditivos, íntegra de contratos e relatórios fiscais.</span>
+              </div>
+              <div class="milestone-item">
+                <strong>Destaques Negativos no Legislativo Municipal</strong>
+                <span>Na RMR, a Câmara de Olinda marcou 62,59% (Intermediário). Na Mata Norte, a Câmara de Itambé registrou a pior nota do estado: 17,98% (Inicial), zerando receitas, despesas e licitações.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="app-footer">
+      <span>Fonte: Programa Nacional de Transparência Pública (PNTP 2026) / Atricon / TCE-PE</span>
+      <span>Infográfico interativo por <a href="https://jamildo.com" target="_blank" rel="noopener noreferrer">Jamildo.com</a></span>
+    </footer>
+  </div>
+
+  <script>
+    // Dados completos das 184 Prefeituras de Pernambuco no Ciclo 2026
+    const PREFEITURAS_2026 = [
+      [1,"Carnaubeira da Penha",100.00,"Diamante",100.00],[2,"Orocó",99.94,"Diamante",100.00],[3,"Calumbi",99.12,"Diamante",100.00],[4,"Triunfo",99.12,"Diamante",100.00],[5,"São José do Belmonte",98.73,"Diamante",100.00],[6,"Toritama",98.49,"Diamante",100.00],[7,"São Bento do Una",98.03,"Diamante",100.00],[8,"Abreu e Lima",97.87,"Diamante",100.00],[9,"Gravatá",97.81,"Diamante",100.00],[10,"Sertânia",97.28,"Diamante",100.00],
+      [11,"Santa Cruz do Capibaribe",97.26,"Diamante",100.00],[12,"Solidão",97.02,"Diamante",100.00],[13,"Cortês",96.83,"Diamante",100.00],[14,"Tabira",96.82,"Diamante",100.00],[15,"Riacho das Almas",96.59,"Diamante",100.00],[16,"São Caitano",96.25,"Diamante",100.00],[17,"Brejo da Madre de Deus",96.23,"Diamante",100.00],[18,"Bezerros",96.17,"Diamante",100.00],[19,"Recife",96.15,"Diamante",100.00],[20,"Cupira",96.01,"Diamante",100.00],
+      [21,"Belo Jardim",95.81,"Diamante",100.00],[22,"Lajedo",95.80,"Diamante",100.00],[23,"São Lourenço da Mata",95.78,"Diamante",100.00],[24,"Vitória de Santo Antão",95.78,"Diamante",100.00],[25,"Santa Cruz da Baixa Verde",95.73,"Diamante",100.00],[26,"São José do Egito",95.70,"Diamante",100.00],[27,"Serra Talhada",95.69,"Diamante",100.00],[28,"Aliança",95.60,"Diamante",100.00],[29,"Sanharó",95.52,"Diamante",100.00],[30,"Altinho",95.49,"Diamante",100.00],
+      [31,"Jaboatão dos Guararapes",95.48,"Diamante",100.00],[32,"Flores",95.31,"Diamante",100.00],[33,"Venturosa",95.30,"Elevado",86.84],[34,"Itapetim",95.13,"Diamante",100.00],[35,"Olinda",94.86,"Ouro",100.00],[36,"Betânia",94.67,"Ouro",100.00],[37,"Itaíba",94.64,"Elevado",97.37],[38,"São Joaquim do Monte",94.52,"Ouro",100.00],[39,"Quixaba",94.12,"Ouro",100.00],[40,"Barreiros",94.07,"Ouro",100.00],
+      [41,"Vertentes",94.05,"Ouro",100.00],[42,"São João",93.98,"Ouro",100.00],[43,"Capoeiras",93.64,"Ouro",100.00],[44,"Tacaimbó",93.44,"Elevado",94.74],[45,"Caruaru",93.37,"Elevado",97.37],[46,"Garanhuns",93.30,"Ouro",100.00],[47,"Ibimirim",93.16,"Ouro",100.00],[48,"Panelas",93.15,"Ouro",100.00],[49,"Cabrobó",93.13,"Ouro",100.00],[50,"Tamandaré",92.82,"Ouro",100.00],
+      [51,"Camaragibe",92.41,"Ouro",100.00],[52,"Carnaíba",92.35,"Ouro",100.00],[53,"São Benedito do Sul",92.29,"Ouro",100.00],[54,"Canhotinho",92.01,"Ouro",100.00],[55,"Casinhas",91.77,"Ouro",100.00],[56,"Camocim de São Félix",91.15,"Elevado",89.47],[57,"Palmeirina",91.07,"Ouro",100.00],[58,"João Alfredo",90.99,"Ouro",100.00],[59,"Rio Formoso",90.96,"Ouro",100.00],[60,"Arcoverde",90.84,"Ouro",100.00],
+      [61,"Ipojuca",90.53,"Ouro",100.00],[62,"Joaquim Nabuco",90.03,"Ouro",100.00],[63,"Palmares",89.91,"Ouro",100.00],[64,"Jaqueira",89.75,"Elevado",86.84],[65,"Feira Nova",89.74,"Ouro",100.00],[66,"Paranatama",89.57,"Ouro",100.00],[67,"Araçoiaba",89.37,"Ouro",100.00],[68,"Surubim",89.32,"Ouro",100.00],[69,"Pesqueira",89.13,"Ouro",100.00],[70,"Terezinha",89.12,"Ouro",100.00],
+      [71,"Iguaracy",88.76,"Elevado",92.11],[72,"Goiana",88.67,"Ouro",100.00],[73,"Granito",88.42,"Elevado",89.47],[74,"Amaraji",88.31,"Ouro",100.00],[75,"Santa Cruz",88.13,"Ouro",100.00],[76,"Calçado",88.11,"Ouro",100.00],[77,"Saloá",87.58,"Elevado",97.37],[78,"Santa Maria do Cambucá",87.15,"Ouro",100.00],[79,"Santa Maria da Boa Vista",87.14,"Ouro",100.00],[80,"Ferreiros",86.56,"Elevado",97.37],
+      [81,"Carpina",86.24,"Ouro",100.00],[82,"Afogados da Ingazeira",85.98,"Ouro",100.00],[83,"Condado",85.55,"Ouro",100.00],[84,"Exu",85.52,"Elevado",92.11],[85,"Jucati",85.42,"Elevado",94.74],[86,"Maraial",85.28,"Ouro",100.00],[87,"Brejão",85.28,"Elevado",92.11],[88,"Vertente do Lério",85.12,"Ouro",100.00],[89,"Inajá",85.11,"Elevado",89.47],[90,"Paulista",84.86,"Prata",100.00],
+      [91,"Verdejante",84.81,"Prata",100.00],[92,"Chã Grande",84.68,"Prata",100.00],[93,"Alagoinha",84.52,"Elevado",97.37],[94,"Paudalho",83.89,"Prata",100.00],[95,"Belém do São Francisco",83.84,"Prata",100.00],[96,"Dormentes",83.84,"Prata",100.00],[97,"Jupi",83.65,"Elevado",89.47],[98,"Escada",83.64,"Prata",100.00],[99,"Pombos",83.40,"Prata",100.00],[100,"Timbaúba",83.28,"Elevado",86.84],
+      [101,"Santa Filomena",82.73,"Prata",100.00],[102,"Xexéu",82.52,"Elevado",97.37],[103,"Taquaritinga do Norte",82.47,"Prata",100.00],[104,"Araripina",82.45,"Prata",100.00],[105,"Petrolina",82.36,"Prata",100.00],[106,"Orobó",82.12,"Prata",100.00],[107,"Moreno",81.61,"Prata",100.00],[108,"Moreilândia",81.59,"Prata",100.00],[109,"Frei Miguelinho",81.30,"Elevado",86.84],[110,"Itacuruba",80.24,"Elevado",86.84],
+      [111,"Camutanga",80.19,"Elevado",94.74],[112,"Glória do Goitá",79.21,"Prata",100.00],[113,"Trindade",79.06,"Elevado",97.37],[114,"Itambé",78.54,"Prata",100.00],[115,"Salgadinho",78.46,"Prata",100.00],[116,"Bom Conselho",78.17,"Prata",100.00],[117,"Lagoa de Itaenga",78.11,"Elevado",86.84],[118,"Serrita",78.10,"Prata",100.00],[119,"Lagoa do Ouro",78.08,"Elevado",84.21],[120,"Sirinhaém",77.88,"Prata",100.00],
+      [121,"Nazaré da Mata",77.79,"Prata",100.00],[122,"Tacaratu",77.61,"Elevado",97.37],[123,"Gameleira",77.39,"Elevado",86.84],[124,"Agrestina",77.37,"Prata",100.00],[125,"Mirandiba",76.78,"Elevado",94.74],[126,"Jatobá",76.55,"Prata",100.00],[127,"Belém de Maria",76.16,"Prata",100.00],[128,"Águas Belas",75.89,"Elevado",97.37],[129,"Lagoa do Carro",75.79,"Elevado",92.11],[130,"Catende",75.78,"Elevado",94.74],
+      [131,"Lagoa dos Gatos",75.76,"Prata",100.00],[132,"Barra de Guabiraba",75.28,"Prata",100.00],[133,"Cachoeirinha",75.27,"Elevado",97.37],[134,"Lagoa Grande",75.20,"Elevado",97.37],[135,"Brejinho",75.13,"Prata",100.00],[136,"Jataúba",74.70,"Intermediário",100.00],[137,"Poção",74.65,"Intermediário",100.00],[138,"Água Preta",74.54,"Intermediário",100.00],[139,"Buíque",74.48,"Intermediário",100.00],[140,"Limoeiro",73.99,"Intermediário",100.00],
+      [141,"Sairé",73.25,"Intermediário",100.00],[142,"Bom Jardim",72.24,"Intermediário",100.00],[143,"Vicência",72.00,"Intermediário",76.32],[144,"Primavera",71.98,"Intermediário",100.00],[145,"Caetés",71.84,"Intermediário",86.84],[146,"Correntes",70.82,"Intermediário",100.00],[147,"Chã de Alegria",70.10,"Intermediário",100.00],[148,"Angelim",69.47,"Intermediário",86.84],[149,"Petrolândia",68.76,"Intermediário",84.21],[150,"Ingazeira",68.36,"Intermediário",81.58],
+      [151,"Salgueiro",66.83,"Intermediário",100.00],[152,"São José da Coroa Grande",66.83,"Intermediário",84.21],[153,"São Vicente Férrer",66.47,"Intermediário",86.84],[154,"Itapissuma",66.44,"Intermediário",86.84],[155,"Tupanatinga",66.42,"Intermediário",81.58],[156,"Tuparetama",65.99,"Intermediário",86.84],[157,"Ibirajuba",65.86,"Intermediário",100.00],[158,"Parnamirim",64.83,"Intermediário",81.58],[159,"Passira",64.82,"Intermediário",92.11],[160,"Macaparana",64.72,"Intermediário",81.58],
+      [161,"Pedra",63.10,"Intermediário",81.58],[162,"Bonito",63.03,"Intermediário",100.00],[163,"Machados",62.66,"Intermediário",100.00],[164,"Ribeirão",61.66,"Intermediário",100.00],[165,"Bodocó",61.37,"Intermediário",78.95],[166,"Ouricuri",57.76,"Intermediário",81.58],[167,"Terra Nova",56.08,"Intermediário",97.37],[168,"Floresta",55.52,"Intermediário",47.37],[169,"Jurema",55.33,"Intermediário",92.11],[170,"Santa Terezinha",54.95,"Intermediário",86.84],
+      [171,"Cedro",54.51,"Intermediário",68.42],[172,"Ilha de Itamaracá",52.41,"Intermediário",100.00],[173,"Quipapá",51.90,"Intermediário",86.84],[174,"Igarassu",50.81,"Intermediário",97.37],[175,"Ipubi",50.02,"Intermediário",92.11],[176,"Itaquitinga",48.04,"Básico",92.11],[177,"Iati",47.89,"Básico",76.32],[178,"Cabo de Santo Agostinho",46.13,"Básico",47.37],[179,"Afrânio",43.51,"Básico",94.74],[180,"Manari",41.83,"Básico",71.05],
+      [181,"Cumaru",41.05,"Básico",81.58],[182,"Custódia",37.29,"Básico",39.47],[183,"Tracunhaém",36.28,"Básico",81.58],[184,"Buenos Aires",33.52,"Básico",76.32]
+    ];
+
+    // Câmaras Municipais detalhadas no levantamento
+    const CAMARAS_DESTAQUE = {
+      "Bom Jardim": { nota: 100.00, selo: "Diamante", obs: "Gabaritou a matriz técnica da Atricon (100% nos critérios)." },
+      "Cachoeirinha": { nota: 100.00, selo: "Diamante", obs: "Gabaritou a matriz técnica da Atricon (100% nos critérios)." },
+      "Carnaíba": { nota: 100.00, selo: "Diamante", obs: "Gabaritou a matriz técnica da Atricon (100% nos critérios)." },
+      "Carnaubeira da Penha": { nota: 100.00, selo: "Diamante", obs: "Saltou de 23,28% em 2024 para 100,00% em 2026." },
+      "Flores": { nota: 100.00, selo: "Diamante", obs: "Gabaritou a matriz técnica da Atricon (100% nos critérios)." },
+      "Garanhuns": { nota: 100.00, selo: "Diamante", obs: "Gabaritou a matriz técnica da Atricon (100% nos critérios)." },
+      "Igarassu": { nota: 100.00, selo: "Diamante", obs: "Câmara atingiu 100% (Diamante), contrastando com a Prefeitura (50,81%)." },
+      "Quixaba": { nota: 100.00, selo: "Diamante", obs: "Gabaritou a matriz técnica da Atricon (100% nos critérios)." },
+      "Ribeirão": { nota: 100.00, selo: "Diamante", obs: "Câmara atingiu 100% (Diamante), acima da Prefeitura (61,66%)." },
+      "Saloá": { nota: 100.00, selo: "Diamante", obs: "Gabaritou a matriz técnica da Atricon (100% nos critérios)." },
+      "São José do Belmonte": { nota: 100.00, selo: "Diamante", obs: "Gabaritou a matriz técnica da Atricon (100% nos critérios)." },
+      "Tabira": { nota: 100.00, selo: "Diamante", obs: "Gabaritou a matriz técnica da Atricon (100% nos critérios)." },
+      "Tuparetama": { nota: 100.00, selo: "Diamante", obs: "Gabaritou a matriz técnica da Atricon (100% nos critérios)." },
+      "Olinda": { nota: 62.59, selo: "Intermediário", obs: "Um dos maiores gargalos legislativos da Região Metropolitana." },
+      "Itambé": { nota: 17.98, selo: "Inicial", obs: "Pior nota do estado (23,08% nos itens essenciais; zerou receitas, despesas e licitações)." }
+    };
+
+    const NOTAS_ESPECIAIS_CIDADE = {
+      "Recife": "Alcançou pela 1ª vez o selo Diamante (96,15%), ficando em 6º lugar entre as capitais brasileiras e ao lado apenas de Aracaju no Nordeste.",
+      "Jaboatão dos Guararapes": "Superou a linha de corte de 95% na Região Metropolitana, garantindo o selo Diamante e 100% nos critérios essenciais.",
+      "Olinda": "A Prefeitura ficou a apenas 0,14 ponto percentual do selo Diamante (94,86%, Ouro), mas a Câmara Municipal marcou 62,59% (Intermediário).",
+      "Carnaubeira da Penha": "Único município de Pernambuco a atingir 100,00% simultaneamente na Prefeitura e na Câmara de Vereadores."
+    };
+
+    let currentSeloFilter = "TODOS";
+    let selectedCityName = "Recife";
+
+    function formatPct(num) {
+      return num.toFixed(2).replace(".", ",") + "%";
+    }
+
+    function normalizeStr(str) {
+      return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    }
+
+    function switchTab(tabId, btnEl) {
+      document.querySelectorAll(".tab-content").forEach(el => el.classList.remove("active"));
+      document.querySelectorAll(".tab-btn").forEach(el => el.classList.remove("active"));
+      document.getElementById(tabId).classList.add("active");
+      btnEl.classList.add("active");
+    }
+
+    function setSeloFilter(selo, btnEl) {
+      currentSeloFilter = selo;
+      document.querySelectorAll("#seloFilters .chip").forEach(c => c.classList.remove("active"));
+      btnEl.classList.add("active");
+      renderRanking();
+    }
+
+    function renderRanking() {
+      const searchVal = normalizeStr(document.getElementById("citySearch").value.trim());
+      const sortVal = document.getElementById("sortSelect").value;
+
+      let filtered = PREFEITURAS_2026.filter(item => {
+        const [pos, name, score, selo] = item;
+        const matchSearch = !searchVal || normalizeStr(name).includes(searchVal);
+        const matchSelo = currentSeloFilter === "TODOS" || selo === currentSeloFilter;
+        return matchSearch && matchSelo;
+      });
+
+      filtered.sort((a, b) => {
+        if (sortVal === "pos-asc") return a[0] - b[0];
+        if (sortVal === "pos-desc") return b[0] - a[0];
+        if (sortVal === "name-asc") return a[1].localeCompare(b[1], "pt-BR");
+        if (sortVal === "ess-asc") return a[4] - b[4] || a[0] - b[0];
+        return a[0] - b[0];
+      });
+
+      const listEl = document.getElementById("rankingList");
+      if (filtered.length === 0) {
+        listEl.innerHTML = `<div style="padding:24px;text-align:center;color:#64748b;font-size:0.84rem;">Nenhum município encontrado para esse filtro.</div>`;
+        return;
+      }
+
+      listEl.innerHTML = filtered.map(item => {
+        const [pos, name, score, selo, ess] = item;
+        const isSelected = name === selectedCityName ? "selected" : "";
+        const essWarn = ess < 100 ? "warn" : "";
+        const safeName = name.replace(/'/g, "\\'");
+        return `
+          <div class="city-row ${isSelected}" onclick="selectCity('${safeName}')">
+            <span class="pos-cell">${pos}º</span>
+            <span class="name-cell" title="${name}">${name}</span>
+            <span class="score-cell">${formatPct(score)}</span>
+            <span><span class="badge-selo selo-${selo}">${selo}</span></span>
+            <span class="ess-cell ${essWarn}">${formatPct(ess)}</span>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function selectCity(cityName) {
+      selectedCityName = cityName;
+      renderRanking();
+      renderCityDetail(cityName);
+    }
+
+    function renderCityDetail(cityName) {
+      const item = PREFEITURAS_2026.find(r => r[1] === cityName) || PREFEITURAS_2026[0];
+      const [pos, name, score, selo, ess] = item;
+      const camaraInfo = CAMARAS_DESTAQUE[name];
+      const notaEspecial = NOTAS_ESPECIAIS_CIDADE[name];
+
+      let statusAlertHtml = "";
+      if (selo === "Elevado") {
+        statusAlertHtml = `
+          <div class="alert-box warn">
+            <strong>Por que perdeu o selo?</strong> A Prefeitura atingiu nota global de ${formatPct(score)} (acima de 75%), mas cumpriu ${formatPct(ess)} dos critérios essenciais. Pela regra da Atricon, é obrigatório cumprir 100% dos itens essenciais para receber selo Diamante, Ouro ou Prata.
+          </div>
+        `;
+      } else if (ess === 100 && (selo === "Diamante" || selo === "Ouro" || selo === "Prata")) {
+        statusAlertHtml = `
+          <div class="alert-box ok">
+            <strong>Certificação Garantida:</strong> O município cumpriu 100% dos critérios essenciais obrigatórios da Lei de Responsabilidade Fiscal e garantiu o selo <strong>${selo}</strong>.
+          </div>
+        `;
+      } else {
+        statusAlertHtml = `
+          <div class="alert-box warn">
+            <strong>Abaixo da linha de certificação:</strong> A Prefeitura registrou ${formatPct(score)} no índice global e ${formatPct(ess)} nos itens essenciais, ficando no nível <strong>${selo}</strong>.
+          </div>
+        `;
+      }
+
+      if (notaEspecial) {
+        statusAlertHtml += `
+          <div class="alert-box ok" style="background:#eef4fb;border-color:#bfdbfe;color:#024796;margin-top:4px;">
+            <strong>Destaque no Levantamento:</strong> ${notaEspecial}
+          </div>
+        `;
+      }
+
+      let camaraCardHtml = "";
+      if (camaraInfo) {
+        camaraCardHtml = `
+          <div class="organ-card">
+            <div class="org-type">Câmara Municipal</div>
+            <div class="org-score">${formatPct(camaraInfo.nota)}</div>
+            <div style="margin-bottom:4px;"><span class="badge-selo selo-${camaraInfo.selo}">${camaraInfo.selo}</span></div>
+            <div class="org-meta">${camaraInfo.obs}</div>
+          </div>
+        `;
+      } else {
+        camaraCardHtml = `
+          <div class="organ-card">
+            <div class="org-type">Legislativo Municipal (Referência)</div>
+            <div class="org-score">90,76%</div>
+            <div class="org-meta">Média das 184 Câmaras Municipais de PE em 2026 (acima da média nacional de 67,00%).</div>
+          </div>
+        `;
+      }
+
+      let stateOrgansHtml = "";
+      if (name === "Recife") {
+        stateOrgansHtml = `
+          <div>
+            <div class="organs-section-title">Órgãos Estaduais Sediados na Capital (Ciclo 2026)</div>
+            <div style="font-size:0.73rem;color:#334155;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:8px 10px;line-height:1.5;">
+              • <strong>TCE-PE, TJPE e Defensoria Pública:</strong> 100,00% (Diamante)<br/>
+              • <strong>MPPE:</strong> 98,65% (Diamante) | <strong>Governo de PE:</strong> 95,71% (Diamante)<br/>
+              • <strong>Alepe (Legislativo Estadual):</strong> 75,94% (Prata)
+            </div>
+          </div>
+        `;
+      }
+
+      const panelEl = document.getElementById("cityDetailPanel");
+      panelEl.innerHTML = `
+        <div class="detail-top">
+          <div>
+            <div class="detail-city-name">${name}</div>
+            <div class="detail-rank-sub">${pos}ª colocação entre as 184 prefeituras de Pernambuco</div>
+            <div style="margin-top:6px;"><span class="badge-selo selo-${selo}">Classificação: ${selo}</span></div>
+          </div>
+          <div class="big-score-box">
+            <span class="num">${formatPct(score)}</span>
+            <span class="lbl">Nota 2026</span>
+          </div>
+        </div>
+
+        ${statusAlertHtml}
+
+        <div>
+          <div class="organs-section-title">Órgãos Avaliados no Município</div>
+          <div class="organ-cards-grid">
+            <div class="organ-card">
+              <div class="org-type">Prefeitura Municipal</div>
+              <div class="org-score">${formatPct(score)}</div>
+              <div class="org-meta">Critérios essenciais atendidos: <strong>${formatPct(ess)}</strong></div>
+            </div>
+            ${camaraCardHtml}
+          </div>
+        </div>
+
+        ${stateOrgansHtml}
+
+        <div>
+          <div class="organs-section-title">Comparativo com as Médias Oficiais (2026)</div>
+          <div class="comp-bars">
+            <div class="comp-bar-item">
+              <div class="comp-bar-head">
+                <span>Prefeitura de ${name}</span>
+                <span style="color:var(--jamildo-orange);font-weight:800;">${formatPct(score)}</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill" style="width:${score}%;background:var(--jamildo-orange);"></div></div>
+            </div>
+            <div class="comp-bar-item">
+              <div class="comp-bar-head">
+                <span>Média Geral de Pernambuco (374 órgãos)</span>
+                <span>86,00%</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill" style="width:86%;background:var(--jamildo-navy);"></div></div>
+            </div>
+            <div class="comp-bar-item">
+              <div class="comp-bar-head">
+                <span>Média das 184 Prefeituras de PE</span>
+                <span>80,93%</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill" style="width:80.93%;background:#0284c7;"></div></div>
+            </div>
+            <div class="comp-bar-item">
+              <div class="comp-bar-head">
+                <span>Média Nacional (Brasil)</span>
+                <span>69,65%</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill" style="width:69.65%;background:#64748b;"></div></div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderPowersAndBottlenecks() {
+      const powersData = [
+        { label: "TCE-PE, TJPE e Defensoria Pública", val: 100.00, color: "#0284c7" },
+        { label: "Ministério Público de PE (MPPE)", val: 98.65, color: "#0284c7" },
+        { label: "Governo de Pernambuco (Executivo)", val: 95.71, color: "#0284c7" },
+        { label: "Média das Câmaras Municipais de PE", val: 90.76, color: "#024796" },
+        { label: "Média Geral de Pernambuco (2º no Brasil)", val: 86.00, color: "#f83d03" },
+        { label: "Média das 184 Prefeituras de PE", val: 80.93, color: "#024796" },
+        { label: "Assembleia Legislativa (Alepe)", val: 75.94, color: "#64748b" },
+        { label: "Câmara Municipal de Olinda", val: 62.59, color: "#ea580c" },
+        { label: "Câmara Municipal de Itambé (Pior nota)", val: 17.98, color: "#dc2626" }
+      ];
+
+      document.getElementById("powersBars").innerHTML = powersData.map(d => `
+        <div class="comp-bar-item">
+          <div class="comp-bar-head">
+            <span>${d.label}</span>
+            <span style="font-weight:800;">${formatPct(d.val)}</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:${d.val}%;background:${d.color};"></div>
+          </div>
+        </div>
+      `).join("");
+
+      const bottlenecksData = [
+        { label: "Emendas Parlamentares (Pior indicador estadual)", val: 41.59, color: "#dc2626" },
+        { label: "Alepe: Recursos Humanos e Folha", val: 48.30, color: "#dc2626" },
+        { label: "Educação e Assistência Social (Fundeb e creches)", val: 58.58, color: "#ea580c" },
+        { label: "Incentivos e Renúncias Fiscais", val: 67.06, color: "#d97706" },
+        { label: "Saúde Pública", val: 67.45, color: "#d97706" },
+        { label: "Portais de Obras Públicas", val: 76.93, color: "#024796" },
+        { label: "Licitações e Contratos", val: 79.59, color: "#024796" },
+        { label: "Referência: Média Geral de Pernambuco", val: 86.00, color: "#f83d03" }
+      ];
+
+      document.getElementById("bottlenecksBars").innerHTML = bottlenecksData.map(d => `
+        <div class="comp-bar-item">
+          <div class="comp-bar-head">
+            <span>${d.label}</span>
+            <span style="font-weight:800;">${formatPct(d.val)}</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:${d.val}%;background:${d.color};"></div>
+          </div>
+        </div>
+      `).join("");
+
+      const camaras100 = [
+        "Bom Jardim", "Cachoeirinha", "Carnaíba", "Carnaubeira da Penha",
+        "Flores", "Garanhuns", "Igarassu", "Quixaba", "Ribeirão",
+        "Saloá", "São José do Belmonte", "Tabira", "Tuparetama"
+      ];
+
+      document.getElementById("camaras100List").innerHTML = camaras100.map(c => {
+        const safe = c.replace(/'/g, "\\'");
+        return `<button class="camara-tag" onclick="jumpToCity('${safe}')">🏛️ ${c} (100%)</button>`;
+      }).join("");
+    }
+
+    function jumpToCity(cityName) {
+      const firstTabBtn = document.querySelector(".tabs-bar .tab-btn");
+      switchTab("tab-ranking", firstTabBtn);
+      currentSeloFilter = "TODOS";
+      document.querySelectorAll("#seloFilters .chip").forEach(c => c.classList.remove("active"));
+      document.querySelector('#seloFilters .chip[data-selo="TODOS"]').classList.add("active");
+      document.getElementById("citySearch").value = "";
+      selectCity(cityName);
+    }
+
+    // Inicialização
+    renderRanking();
+    renderCityDetail("Recife");
+    renderPowersAndBottlenecks();
+  </script>
+</body>
+</html>
